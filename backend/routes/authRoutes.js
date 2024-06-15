@@ -8,12 +8,12 @@ const router = express.Router()
 router.get('/google',
   passport.authenticate('google', { scope: ['profile', 'email'], prompt: 'select_account' })
 );
-// router.get("/google/callback",
-//   passport.authenticate("google", {
-//     successRedirect: `${process.env.CLIENT_URL}/pp`,
-//     failureRedirect: `${process.env.CLIENT_URL}/login/failed`,
-//   })
-// )
+router.get("/google/callback",
+  passport.authenticate("google", {
+    successRedirect: `${process.env.CLIENT_URL}/pp`,
+    failureRedirect: `${process.env.CLIENT_URL}/login/failed`,
+  })
+)
 
 router.get("/login/success", async (req, res) => {
   if (req.user) {

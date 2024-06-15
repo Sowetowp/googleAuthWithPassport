@@ -23,7 +23,7 @@ const passportUtil = app => {
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
         callbackURL: "http://localhost:5000/auth/google/callback",
-        // scope: ["profile", "email"],
+        scope: ["profile", "email"],
         // prompt: 'select_account'
       },
       (accessToken, refreshToken, profile, callback) => {

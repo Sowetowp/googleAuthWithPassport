@@ -7,7 +7,6 @@ export default function Login() {
     const handleGoogleAuth = () => {
         try {
             window.location.href = `http://localhost:5000/auth/google`
-            window.location.href = `http://localhost:5000/auth/google/callback`
         } catch (err) {
             toast.error(err?.data?.message || err.error)
 

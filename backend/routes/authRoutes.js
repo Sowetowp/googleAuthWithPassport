@@ -5,9 +5,9 @@ import dotenv from "dotenv"
 dotenv.config({path: "./config/.env"})
 
 const router = express.Router()
-router.get('/google',
-  passport.authenticate('google', { scope: ['profile', 'email'], prompt: 'select_account' })
-);
+// router.get('/google',
+//   passport.authenticate('google', { scope: ['profile', 'email'], prompt: 'select_account' })
+// );
 router.get("/google/callback",
   passport.authenticate("google", {
     successRedirect: `${process.env.CLIENT_URL}/pp`,
